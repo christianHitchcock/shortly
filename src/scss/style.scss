@@ -1,0 +1,119 @@
+@import "variables";
+@import "animation";
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $font-family;
+}
+.logo {
+  padding: 10px;
+}
+nav {
+  display: flex;
+  padding:8px 10px;
+  margin: 0;
+  position: relative;
+  .navigation-menu  {
+    display:none;
+    flex-direction: column;
+    position: absolute;
+    top: 90%;
+    z-index: 1;
+    border-radius: 10px;
+    right: 8%;
+    left: 8%;
+    padding: 30px;
+    background-color: $DarkViolet;
+    text-align: center;
+    @extend .slide-top;
+    a {
+      text-decoration: none;
+      padding: 13px;
+      text-transform: capitalize;
+      color: $white;
+      font-weight: $largeweight;
+      font-size: $medium;
+    }
+    a:hover {
+      color: $VeryDarkViolet;
+    }
+    .btn {
+      margin-top: 10px;
+      display:flex;
+    flex-direction: column;
+      #signupbtn {
+        text-align: center;
+        background: $Cyan;
+        color: $white;
+        padding: 8px 30px;
+        border-radius: 20px;
+      }
+      #signupbtn:hover{
+        background: $lightCyan;
+        color: $white;
+      }
+    }
+  }
+  .navigation-menu.expanded  {
+    display: flex;
+  }
+  #openmenu {
+    font-size: $largest;
+    margin-left: 180px;
+    color: $Gray;
+    display: block;
+  }
+}
+@media screen and (min-width: 600px) {
+  .logo {
+    padding-top: 25px;
+  }
+  nav {
+    display: flex;
+    padding: 20px 140px;
+    position: relative;
+    .navigation-menu {
+      display:flex;
+      position: relative;
+      flex-direction: row;
+      border-radius: 0;
+      padding: 20px;
+      background-color: inherit;
+      text-align: center;
+      a {
+        text-decoration: none;
+        padding: 10px;
+        text-transform: capitalize;
+        color: $Gray;
+        font-weight: $largeweight;
+        font-size: $medium;
+      }
+     
+      .btn {
+        margin-top: 0;
+        display:flex;
+        flex-direction: row;
+        margin-left: 33rem;
+        padding: 0;
+        #signupbtn {
+          text-align: center;
+          background: $Cyan;
+          color: $white;
+          padding: 10px 20px;
+          border-radius: 20px;
+          margin-left: 15px;
+        }
+      
+      }
+    }
+    
+    #openmenu {
+      display: none;
+    }
+  }
+}

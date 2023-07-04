@@ -1,0 +1,109 @@
+@import "variables";
+@import "animation";
+
+
+
+.container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    .heroimg {
+        @extend .slide-in-top ;
+        width: 500px;
+        height: 400px;
+        img {
+            width: 100%;
+            height: 100%;
+            margin-left: 25px;
+        }
+    }
+    .container-text {
+        margin-top: 20px;
+        padding: 10px;
+        h1 {
+            text-align: center;
+            font-size: $largest;
+            font-weight: $largeweight;
+            line-height: 45px;
+            @extend .fade-in-fwd ;
+        }
+        p {
+            text-align: center;
+            padding:5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding: 10px 25px;
+            color: $Gray;
+            font-size: $medium;
+            @extend .fade-in-fwd ;
+        }
+        button {
+            text-align: center;
+            background: $Cyan;
+            text-transform: capitalize;
+            color: $white;
+            padding: 10px 30px;
+            border-radius: 20px;
+            border: none;
+            font-size: $medium;
+            margin: 10px 100px;
+            @extend .fade-in-fwd ;
+        }
+    }
+}
+
+
+@media screen and (min-width: 600px) {
+    .container {
+        overflow: hidden;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 20px;
+        margin-left: 50px;
+        .heroimg {
+            flex: 50%;
+            width: 750px;
+            height: 500px;
+            margin-right: -70px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .container-text {
+            flex: 50%;
+            h1 {
+                text-align: left;
+                font-size: $biggestfont;
+                padding-left: 90px;
+                margin-top: 50px;
+                line-height: 90px;
+                font-weight: $largeweight;
+            }
+            p {
+                text-align: left;
+                color: $Gray;
+                font-size: $main;
+                margin-left: 80px;
+                margin-right:   150px;
+            }
+            button {
+                text-align: center;
+                background: $Cyan;
+                text-transform: capitalize;
+                color: $white;
+                padding: 15px 40px;
+                border-radius: 25px;
+                border: none;
+                font-size: $main;
+                margin: 10px 100px;
+            }
+            button:hover{
+                background: $lightCyan;
+                color: $white;
+              }
+        }
+       
+    }
+
+}
